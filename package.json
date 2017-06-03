@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "css-loader": "^0.28.4",
+    "style-loader": "^0.18.1",
+    "webpack": "^2.6.1"
+  },
+  "dependencies": {
+    "echarts": "^3.6.1",
+    "jquery": "^3.2.1"
+  }
+}
