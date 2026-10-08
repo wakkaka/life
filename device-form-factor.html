@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>宽 > 高</title>
+  <style>
+    body { font-family: sans-serif; padding: 24px; }
+    #result { font-size: 1.4rem; }
+  </style>
+</head>
+<body>
+  <p id="result">loading…</p>
+  <script type="module">
+    import { getViewportSize, subscribeWidthGreaterThanHeight } from './js/device-form-factor.js';
+
+    var resultEl = document.getElementById('result');
+    subscribeWidthGreaterThanHeight(function (isLandscape) {
+      var size = getViewportSize();
+      resultEl.textContent =
+        Math.round(size.width) + ' × ' + Math.round(size.height) +
+        ' → width > height = ' + String(isLandscape);
+    });
+  </script>
+</body>
+</html>

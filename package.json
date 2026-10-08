@@ -1,6 +1,7 @@
 {
   "scripts":{
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "test:form-factor": "node --experimental-default-type=module js/device-form-factor.test.js"
   },
     
   "devDependencies": {
