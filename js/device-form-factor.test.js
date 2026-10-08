@@ -126,6 +126,18 @@ assertEqual('detect duo profile', duoSnapshot.iphoneDuoProfile, 'unfolded');
 assertEqual('duo inner is landscape mobile', duoSnapshot.isLandscapeMobile, true);
 assertEqual('duo inner is not 16:9 widescreen', duoSnapshot.isWideScreen, false);
 
+var desktopWide = detectDeviceFormFactor(mockWindow({
+  innerWidth: 1920,
+  innerHeight: 1080,
+  devicePixelRatio: 1,
+  navigator: { userAgent: 'Mozilla/5.0', maxTouchPoints: 0 },
+  matchMedia: function () {
+    return { matches: false };
+  }
+}));
+assertEqual('desktop 16:9 is widescreen', desktopWide.isWideScreen, true);
+assertEqual('desktop is not landscape mobile', desktopWide.isLandscapeMobile, false);
+
 var spanningSnapshot = detectDeviceFormFactor(mockWindow({
   innerWidth: 800,
   innerHeight: 600,

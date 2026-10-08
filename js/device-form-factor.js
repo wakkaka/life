@@ -269,7 +269,8 @@ function detectDeviceFormFactor(win, options) {
     devicePixelRatio: dpr,
     isMobileLike: mobile,
     isLandscapeMobile: mobile && wide.isLandscape,
-    isWideScreen: mobile && wide.isWideScreen,
+    // Widescreen is an aspect-ratio signal, not a device class.
+    isWideScreen: wide.isWideScreen,
     isFoldableSpanning: foldable.spanning,
     isFoldedPosture: foldable.foldedPosture,
     foldableSource: foldable.source,
